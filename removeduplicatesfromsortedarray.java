@@ -1,6 +1,6 @@
 // Program to remove duplicates from sorted array
 
-class Solution {
+class removeduplicatesfromsortedarray {
     public int removeDuplicates(int[] nums) {
         int n = nums.length;
         int r = n-1;
