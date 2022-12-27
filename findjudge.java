@@ -14,10 +14,10 @@ class findjudge {
         int outdegree[] = new int[n+1];
         int indegree[] = new int[n+1];
         int ans = -1;
-        for(int i:outdegree)
-            i = 0;
-        for(int i:indegree)
-            i = 0;
+        for(int i = 0; i <= outdegree.length; i++)
+            outdegree[i] = 0;                           // initializing to zero
+        for(int i = 0; i <= indegree.length; i++)
+            indegree[i] = 0;                            // initializing to zero
         int x[] = new int[2];
         for(int i = 0; i < trust.length; i++) {
             x = trust[i];
