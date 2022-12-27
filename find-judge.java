@@ -14,9 +14,9 @@ class Solution {
         int outdegree[] = new int[n+1];
         int indegree[] = new int[n+1];
         int ans = -1;
-        for(int i : outdegree)
+        for(int i:outdegree)
             i = 0;
-        for(int i : indegree)
+        for(int i:indegree)
             i = 0;
         int x[] = new int[2];
         for(int i = 0; i < trust.length; i++) {
