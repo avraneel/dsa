@@ -1,7 +1,7 @@
 // Approach
 // Same as LCS, but s2 is the reverse of s1
 
-class Solution {
+class longestpalindromicsubsequence {
     public int longestPalindromeSubseq(String s) {
         String s2 = new StringBuilder(s).reverse().toString();
         

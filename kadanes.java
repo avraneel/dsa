@@ -1,6 +1,6 @@
 // Kadane's algorithm which finds out the maximum contiguous subarray with the largest sum
 
-class Solution {
+class kadanes {
     public int maxSubArray(int[] nums) {
         int maxsum = Integer.MIN_VALUE;
         int cursum = 0;

@@ -61,7 +61,6 @@ int main() {
         cout << it.first << it.second << endl;
     }
 
-
     // each element of all kinds of map shown above is a pair which is also a container
     pair<int, int> pr;
     // use first and second variable names

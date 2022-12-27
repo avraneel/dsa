@@ -17,7 +17,7 @@ import java.util.*;
  *     }
  * }
  */
-class Solution {
+class binarytreelevelordertraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
         List<List<Integer>> result = new ArrayList<>();
