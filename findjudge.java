@@ -9,7 +9,7 @@
 
 // Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
 
-class Solution {
+class findjudge {
     public int findJudge(int n, int[][] trust) {
         int outdegree[] = new int[n+1];
         int indegree[] = new int[n+1];
