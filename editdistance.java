@@ -1,7 +1,7 @@
 // Program to find out edit distance between 2 strings in Java
 
 
-class Solution {
+class editdistance {
     public int minDistance(String word1, String word2) {
         int m = word1.length();
         int n = word2.length();
