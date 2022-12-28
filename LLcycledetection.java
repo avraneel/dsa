@@ -22,6 +22,8 @@ public class LLcycledetection {
             slow = slow.next;
             fast = fast.next.next;
 
+            // Fast will move 2x as slow and if there is a cycle fast & slow will eventually catch up
+
             if(slow == fast) {  
                 // IMP!! Comparing references to the same node, NOT the int val!!!
                 return true;
