@@ -29,7 +29,5 @@ public class LLintersection {
 
         return a; // If cycle then node will return or else 
                 // if no cycle then both a and b will be null and null will be returned.
-
-
     }
 }
