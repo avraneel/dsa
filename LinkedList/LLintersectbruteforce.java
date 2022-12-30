@@ -1,4 +1,5 @@
 package LinkedList;
+
 public class LLintersectbruteforce {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode curA = headA;

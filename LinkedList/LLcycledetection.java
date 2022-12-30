@@ -4,16 +4,6 @@ package LinkedList;
 
 // Link: https://leetcode.com/problems/linked-list-cycle/description/
 
- class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
-    val = x;
-    next = null;
-    }
- }
- 
-
  // Solution starts here
 public class LLcycledetection {
     // This is Floyd's Hair and Tortoise algorithm, used for cycle detection in LL using 
