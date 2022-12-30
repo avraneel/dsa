@@ -4,7 +4,7 @@ import java.util.*;;
 
 // Given an array print all possible subsets/subsequences (same ans for both)
 
-class PowerSet {
+class PowerSetRecursion {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> al = new ArrayList<>();
