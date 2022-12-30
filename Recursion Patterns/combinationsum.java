@@ -17,11 +17,23 @@ class Solution {
             }
             return;
         }
-        if(nums[ind] <= target) {       // To make sure target isn't negative
+        if(nums[ind] <= target) {  
+        
+        // Element can only be picked if the resultant target - nums[i]
+        // is >= 0
+            
+        // To make sure target isn't negative
+        // If condition is satisfied then we:
+        // 1. pick the element and add it to our bucket
+        // 2. subtract the element from the target 
+        // 3. After element is picked so many times that sum of all of them exceeds
+        // target, we remove it
             al.add(nums[ind]);
             solve(ans, al, nums, ind, target - nums[ind]);    // Taken
             al.remove(al.size() - 1);
         }
+        // This is outside the bracket because we haven't changed target 
+        // and 
         solve(ans, al, nums, ind+1, target);    // Not taken
     }
 }
