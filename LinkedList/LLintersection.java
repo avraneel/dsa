@@ -1,3 +1,4 @@
+package LinkedList;
 // Link = https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 
 // See diagram in question,

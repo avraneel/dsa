@@ -1,3 +1,4 @@
+package LinkedList;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -8,6 +9,8 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// Striver Solution: 
 
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

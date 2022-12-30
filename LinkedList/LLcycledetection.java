@@ -1,3 +1,4 @@
+package LinkedList;
 
 // Detect if cycle is present in LL
 
