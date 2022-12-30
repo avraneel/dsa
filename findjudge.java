@@ -26,13 +26,6 @@ class findjudge {
             outdegree[a]++;
             indegree[b]++; 
         }
-        for(int i:outdegree) {
-            System.out.println(i);
-        }
-        System.out.println();
-        for(int i:indegree) {
-            System.out.println(i);
-        }
         for(int i = 1; i < outdegree.length; i++) {
             if(outdegree[i] == 0 && indegree[i] == n-1) {
                 ans = i;
