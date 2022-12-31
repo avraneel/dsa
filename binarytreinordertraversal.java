@@ -15,7 +15,7 @@ class TreeNode {
     }
 }
 
-class Solution {
+class binarytreeinordertraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> ord = new ArrayList<>();
         inorder(root, ord);
