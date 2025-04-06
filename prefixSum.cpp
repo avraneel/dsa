@@ -25,6 +25,18 @@ vector<int> prefixSumNaive(vector<int> &a) {
     return pfs;
 }
 
+/* Approach 2: prefix[i] = prefix[i-1] + a[i] */
+void prefixSum2(vector<int> &a) {
+    vector<int> prefix(a.size());
+    prefix[0] = a[0];
+    for(int i = 1; i < a.size(); i++) {
+        prefix[i] = prefix[i-1] + a[i];
+    }
+    cout << "\n2nd approach:\n";
+    print(prefix);
+    cout << "\n";
+}
+ 
 void input(vector<int> &a) {
     int s;
     cout << "Enter number of elements: ";
@@ -45,4 +57,5 @@ int main() {
     cout << "\nDisplaying prefix sum\n";
     vector<int> pfs = prefixSumNaive(a);
     print(pfs);
+    prefixSum2(a);
 }
