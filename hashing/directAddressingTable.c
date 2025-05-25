@@ -1,6 +1,8 @@
 /*
+Implementing DAT as in CLRS
+
 In Direct addressing Table, we have a value and a key with it. The value is thus stored at index key in the array.
-We can choose not to store keys, but how will we then ensure that element its empty? For that we need custom data types.
+So, we can choose not to store keys, but how will we then ensure that element its empty? For that we need custom data types.
 Now I need to make array of item pointers, so I can check for NULL pointer.
 */
 
@@ -14,6 +16,8 @@ typedef struct {
     int value;
 } item;
 
+/* In this DAT implementation, we store the item pointer in index value which is the same as key K.
+Example: {Key=5, Val=12} has address 0x5d so we store 0x5d in array index 5. */
 item* direct_addressing_table[TABLE_SIZE];
 
 /* if we keep item i without pointers, then it will become pass by value so a local copy will be created for parameter. Now, when we pass 12, that local copy will be overwritten. That's why we pass item* i as we create the address locations separately.*/

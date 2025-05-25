@@ -1,72 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define MAX_NAME 256
-#define TABLE_SIZE 10
-
 typedef struct {
-    string name;
-    int age;
-} person;
+    int key;
+    int value;
+} item;
 
-person* hash_table[TABLE_SIZE];
-
-unsigned int hashFunction(string name) {
-
-    unsigned int hash_value = 0;
-    for(auto x : name) {
-        hash_value += x;
-        hash_value %= 10;
-    }
-    cout << "\t";
-    return hash_value;
+/* Simple mod function, transforms key K to put it in index ind of hashtable*/
+int hashFunction(int key) {
+    int ind = key % 20;
+    return ind;
 }
 
-void initHashTable() {
-    for(int i = 0; i < TABLE_SIZE; i++) {
-        hash_table[i] = nullptr;
-    }
+// vector<item*> means vector of item pointers
+void storeItem(vector<item*> &ht, item *i) {
+    int ind = hashFunction(i->key); // In case of DAT, ind = key, we dont use a hash function
+    ht.at(ind) = i;
 }
 
-void printTable() {
-    for(int i = 0; i < TABLE_SIZE; i++) {
-        if(hash_table[i] == nullptr) {
-            cout << i << "\t---" << "\n";
-        }
-        else {
-            cout << i << "\t" << hash_table[i]->name << "\n";
-        }
-    }
+bool isEmpty(vector<item*> &ht, int key) {
+    int ind = hashFunction(key);
+    if (ht.at(ind) == nullptr)
+        return true;
+    else
+        return false; 
 }
 
-void hashInsert(person* hashTable[], person* item) {
-    int index = hashFunction(item->name);
-    cout << item->name << "\t" << index << '\n';
-    cout << (hashTable[index] == nullptr) << '\n';
-    if(hashTable[index] == nullptr) {
-        hashTable[index] = item;
-    }
-    else {
-        cout << "Can't add as index filled\n";
+void print(vector<item*> &ht) {
+    for(int i = 0; i < ht.size(); i++) {
+        if (ht.at(i) == nullptr) 
+            cout << "HT[" << i << "]\t=\tnull\n";
+        else 
+            cout << "HT[" << i << "]\t=\t(" << ht.at(i) << ") -> [K=" << ht.at(i)->key << ",V=" << ht.at(i)->value <<"]\n"; 
     }
 }
 
 int main() {
-    initHashTable();
-    person ri = {name: "Richard", age: 28};
-    hashInsert(hash_table, &ri);
-    //cout << "Richard => " << hashFunction("Richard") << "\n";
-    person ed = {name: "Edward", age: 25};
-    hashInsert(hash_table, &ed);
-    //cout << "Edward => " << hashFunction("Edward") << "\n";
-    person su = {name: "Susan", age: 32};
-    hashInsert(hash_table, &su);
-    //cout << "Susan => " << hashFunction("Susan") << "\n";
-    person jo = {name: "Jonathan", age: 51};
-    hashInsert(hash_table, &jo);
-    //cout << "Johnathan => " << hashFunction("Jonathan") << "\n";
-    person ro = {name: "Ronald", age: 19};
-    hashInsert(hash_table, &ro);
-    //cout << "Ronald => " << hashFunction("Ronald") << "\n";
-    printTable();
+    vector<item*> hashTable(20);
+    item i1 = {45, 689};
+    item i2 = {4353, 352};
+    storeItem(hashTable, &i1);
+    storeItem(hashTable, &i2);
+    print(hashTable);
 }
