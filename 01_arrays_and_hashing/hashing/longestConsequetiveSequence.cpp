@@ -12,7 +12,6 @@ update len and then update nums[i] to next value and repeat.
 
 */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
