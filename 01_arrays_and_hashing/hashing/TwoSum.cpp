@@ -1,5 +1,5 @@
 /*
-Link:
+Link: https://leetcode.com/problems/two-sum/
 
 Brute force is O(n2), too slow.
 

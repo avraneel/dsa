@@ -2,6 +2,9 @@
 using namespace std;
 
 
+#include <bits/stdc++.h>
+using namespace std;
+
 void print(vector<int> &a) {
     for(auto item: a) {
         cout << item << " ";
