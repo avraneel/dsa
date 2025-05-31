@@ -15,7 +15,7 @@ now the array will be:
 [null, [1,3,2], [5,7], [4], null, null, null, null, null, null]
 
 As you can see, index 1 has elements that occur only once, and index 3 has 4 which occurs thrice.
-This was the tricky part.
+This was the tricky part. It kind of works like bucket sort.
 
 Now we loop through this array of vectors *backwards* and store the list elements in our answer list (we skip empty indices here). Once we come across k non empty elements, our job is done and we can return the result.
 
