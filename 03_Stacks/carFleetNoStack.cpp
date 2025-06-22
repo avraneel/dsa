@@ -5,6 +5,10 @@ using namespace std;
 Link: https://leetcode.com/problems/car-fleet/
 
 Approach:
+    We don't need stack for this approach.
+    A simple slowest speed variable and a counter variable if new slowest speed
+    is encountered should do.
+    
     let us have:
         pos     = [10,  8,  0,  5,  3]
         speed   = [2,   4,  1,  1,  3]
