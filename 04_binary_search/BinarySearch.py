@@ -12,7 +12,7 @@ def binary_search(key, nums):
             return mid
 
         #if < mid
-        if key < nums[mid]:
+        elif key < nums[mid]:
             r = mid-1
 
         else:
