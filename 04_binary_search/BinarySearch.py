@@ -3,7 +3,8 @@ def binary_search(key, nums):
     l = 0
     r = len(nums)-1
 
-    while l < r:
+    # l <= r to account for arrays of length 1
+    while l <= r:
         mid = (l + r) // 2
 
         # if == mid then found
