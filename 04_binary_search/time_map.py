@@ -32,11 +32,3 @@ class TimeMap:
             return ""
             
         return arr[right][1]
-
-
-
-mymap = TimeMap()
-
-mymap.set("foo", "bar", 1)
-
-mymap.get("foo", 1)
