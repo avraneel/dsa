@@ -10,7 +10,7 @@ def search_2d(key, matrix):
     while (l<=r):
         mid = (l + r) // 2
 
-        # we are not flattening the array in memoey
+        # we are not flattening the array in memory
         # we are just calculating the corresponding row and col according to mid
         # and yes, value of m is not used here
         # keep these formulas in mind
