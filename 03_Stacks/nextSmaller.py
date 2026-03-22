@@ -1,3 +1,6 @@
+# Link: https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1
+
+
 def nextSmaller(arr):
     stack = []
     nextSmaller = [-1] * len(arr)
