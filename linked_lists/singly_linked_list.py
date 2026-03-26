@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, data) -> None:
         self.data = data
-        self.next: None
+        self.next = None
 
 
 def traverse(head: Node):
@@ -82,6 +82,30 @@ def insert_at_specific_position(head: Node, data, pos):
     return head
 
 
+# Remove at beginning
+def delete_from_beginning(head: Node):
+    """
+    deletes the beginning node
+    and returns the new head pointer,
+    which is basically head.next
+    """
+    if head is None:
+        return None
+
+    head = head.next
+    return head
+
+
+def delete_from_end(head: Node):
+    pointer = head
+    while pointer.next.next is not None:
+        pointer = pointer.next
+    # now AFTER exiting from while loop,
+    # pointer is at second last node,
+    pointer.next = None
+    return head
+
+
 # Create first node
 head = Node(10)
 
@@ -96,4 +120,8 @@ head = insert_at_beginning(head, 40)
 head = insert_at_end(head, 50)
 traverse(head)
 head = insert_at_specific_position(head, 100, 3)
+traverse(head)
+head = delete_from_beginning(head)
+traverse(head)
+head = delete_from_end(head)
 traverse(head)
