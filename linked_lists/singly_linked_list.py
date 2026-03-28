@@ -127,6 +127,15 @@ def delete_by_position(head: Node, pos):
     return head
 
 
+def search(head, key):
+    pointer = head
+    while pointer is not None:
+        if pointer.data == key:
+            return True
+        pointer = pointer.next
+    return False
+
+
 # Create first node
 head = Node(10)
 
@@ -148,3 +157,4 @@ head = delete_from_end(head)
 traverse(head)
 head = delete_by_position(head, 3)
 traverse(head)
+print(search(head, 100))
