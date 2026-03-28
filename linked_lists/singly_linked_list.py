@@ -105,6 +105,7 @@ def delete_from_end(head: Node):
     pointer.next = None
     return head
 
+
 def delete_by_position(head: Node, pos):
     """
     delete node at pos (1 based indexing)
@@ -112,7 +113,18 @@ def delete_by_position(head: Node, pos):
     pointer = head
     count = 1
 
-    while count < pos:
+    if pos == 1:
+        head = head.next
+        return head
+
+    while count < pos - 1:
+        pointer = pointer.next
+        count += 1
+
+    # now  at this point pointer is at pos - 1
+    pointer.next = pointer.next.next
+
+    return head
 
 
 # Create first node
@@ -133,4 +145,6 @@ traverse(head)
 head = delete_from_beginning(head)
 traverse(head)
 head = delete_from_end(head)
+traverse(head)
+head = delete_by_position(head, 3)
 traverse(head)
