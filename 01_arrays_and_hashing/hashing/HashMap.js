@@ -31,10 +31,18 @@ class HashMap {
   has(key) {
     const index = this.hash(key);
     const val = this.data[index];
-    return val == false ? false : val;
+    return val == undefined ? false : true;
   }
 
   remove(key) {
-    const index = binarySearch();
+    const index = this.hash(key);
+    const val = this.data[index];
+    if (val != undefined) {
+      // key found
+      this.data[index] = undefined;
+      return true;
+    } else {
+      return false;
+    }
   }
 }
