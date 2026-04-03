@@ -1,3 +1,20 @@
+function binarySearch(arr, item) {
+  left = 0;
+  right = arr.length - 1;
+
+  while (left <= right) {
+    mid = Math.trunc((left + right) / 2);
+    if (item === arr[mid]) {
+      return true;
+    } else if (item < arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return false;
+}
+
 class HashMap {
   constructor(loadFactor, capacity) {
     this.loadFactor = loadFactor;
@@ -26,5 +43,11 @@ class HashMap {
     const index = this.hash(key);
     if (data[index]) return data[index];
     else return null;
+  }
+
+  has(key) {
+    const index = this.hash(key);
+    const indexArray = [...Array(this.data.length).keys()];
+    return binarySearch(indexArray, index);
   }
 }
