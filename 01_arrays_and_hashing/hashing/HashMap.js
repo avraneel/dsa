@@ -1,7 +1,7 @@
 class HashMap {
   constructor(loadFactor, capacity) {
-    this.loadFactor = loadFactor;
-    this.capacity = capacity;
+    this.loadFactor = loadFactor ?? 0.75;
+    this.capacity = capacity ?? 16;
     this.data = [];
   }
 
