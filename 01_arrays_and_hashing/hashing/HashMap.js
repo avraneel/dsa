@@ -11,7 +11,7 @@ class HashMap {
     const primeNumber = 31;
 
     for (let i = 0; i < key.length; i++) {
-      hashCode = primeNumber * hashCode + key.charCodeAt(i);
+      hashCode = (primeNumber * hashCode + key.charCodeAt(i)) % this.capacity;
     }
 
     return hashCode;
@@ -20,6 +20,9 @@ class HashMap {
   set(key, value) {
     const index = this.hash(key);
     data[index] = value;
+    if (index / this.capacity > this.loadFactor) {
+      this.capacity *= 2;
+    }
   }
 
   get(key) {
@@ -43,6 +46,14 @@ class HashMap {
       return true;
     } else {
       return false;
+    }
+  }
+
+  length() {}
+
+  clear() {
+    for (let i = 0; i < this.data.capacity; i++) {
+      data[i] = undefined;
     }
   }
 }
