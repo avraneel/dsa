@@ -1,8 +1,8 @@
-class HashMap {
+export class HashMap {
   constructor(loadFactor, capacity) {
     this.loadFactor = loadFactor ?? 0.75;
     this.capacity = capacity ?? 16;
-    this.data = [];
+    this.data = new Array(capacity);
   }
 
   hash(key) {
@@ -19,7 +19,7 @@ class HashMap {
 
   set(key, value) {
     const index = this.hash(key);
-    data[index] = { key: key, value: value };
+    this.data[index] = { key: key, value: value };
     if (index / this.capacity > this.loadFactor) {
       this.capacity *= 2;
     }
@@ -50,7 +50,7 @@ class HashMap {
   }
 
   length() {
-    let count = 1;
+    let count = 0;
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i] != undefined) {
         count++;
@@ -68,7 +68,7 @@ class HashMap {
   keys() {
     const arr = [];
     this.data.forEach((element) => {
-      arr.push(element.key);
+      if (element != undefined) arr.push(element.key);
     });
     return arr;
   }
@@ -76,7 +76,7 @@ class HashMap {
   values() {
     const arr = [];
     this.data.forEach((element) => {
-      arr.push(element.value);
+      if (element != undefined) arr.push(element.value);
     });
     return arr;
   }
@@ -84,8 +84,10 @@ class HashMap {
   entries() {
     const arr = [];
     this.data.forEach((element) => {
-      const item = [element.key, element.value];
-      arr.push(item);
+      if (element != undefined) {
+        const item = [element.key, element.value];
+        arr.push(item);
+      }
     });
     return arr;
   }
