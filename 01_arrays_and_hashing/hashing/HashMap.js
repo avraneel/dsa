@@ -7,21 +7,29 @@ export class HashMap {
 
   hash(key) {
     let hashCode = 0;
-
     const primeNumber = 31;
 
     for (let i = 0; i < key.length; i++) {
       hashCode = (primeNumber * hashCode + key.charCodeAt(i)) % this.capacity;
     }
-
     return hashCode;
+  }
+
+  rehash() {
+    const backup = JSON.parse(JSON.stringify(this.data));
+    this.capacity *= 2;
+    this.data = Array(this.capacity);
+    backup.forEach((item) => {
+      const index = this.hash(item);
+      this.data[index] = item;
+    });
   }
 
   set(key, value) {
     const index = this.hash(key);
     this.data[index] = { key: key, value: value };
-    if (index / this.capacity > this.loadFactor) {
-      this.capacity *= 2;
+    if (this.length() > this.capacity * this.loadFactor) {
+      this.rehash();
     }
   }
 
