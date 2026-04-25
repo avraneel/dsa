@@ -1,14 +1,13 @@
 # Link: https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1
 
-
-def nextSmaller(arr):
+def next_smaller(arr):
     stack = []
-    nextSmaller = [-1] * len(arr)
+    smaller = [-1] * len(arr)
 
     for i in range(len(arr)):
         while stack and arr[stack[-1]] > arr[i]:
             index = stack.pop()
-            nextSmaller[index] = arr[i]
+            smaller[index] = arr[i]
 
         stack.append(i)
 
