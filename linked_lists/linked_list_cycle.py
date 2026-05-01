@@ -4,6 +4,8 @@
 #         self.val = x
 #         self.next = None
 
+# Read more here https://cp-algorithms.com/others/tortoise_and_hare.html
+
 
 class Solution:
     def hasCycle(self, head) -> bool:
