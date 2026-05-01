@@ -6,7 +6,7 @@
 
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle(self, head) -> bool:
         s = head
         f = head
         while s and f and f.next:
